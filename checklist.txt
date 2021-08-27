@@ -4,11 +4,11 @@ And = done
 Or = done
 Xor = done
 Mux = done
-DMux
-Not16
-And16
-Or16
-Mux16
+DMux = done
+Not16 = done
+And16 = done
+Or16 = done
+Mux16 = done
 DMux16
 Or8Way
 Mux4Way16
