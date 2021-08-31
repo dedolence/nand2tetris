@@ -10,8 +10,8 @@ And16 = done
 Or16 = done
 Mux16 = done
 DMux16
-Or8Way
-Mux4Way16
+Or8Way - done
+Mux4Way16 - done
 Mux8Way16
 DMux4Way
 DMux8Way
