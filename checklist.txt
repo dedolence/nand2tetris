@@ -13,5 +13,5 @@ DMux16
 Or8Way = done
 Mux4Way16 = done
 Mux8Way16 = done
-DMux4Way
+DMux4Way = done
 DMux8Way

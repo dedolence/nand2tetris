@@ -19,11 +19,41 @@ CHIP DMux4Way {
     Not(in=sel[0], out=notsel0);
     Not(in=sel[1], out=notsel1);
 
+    And(a=notsel0, b=notsel1, out=true-for-a);
+    And(a=true-for-a, b=in, out=a);
     
-    And(a=notsel0, b=notsel1, out=asub);
-    Or(a=in, b=asub, out=out);
-
-    And(a=sel[0], b=notsel1, out=b);
-    And(a=notsel0, b=sel[1], out=c);
-    And(a=sel[0], b=sel[1], out=d);
+    And(a=sel[0], b=notsel1, out=true-for-b);
+    And(a=true-for-b, b=in, out=b);
+    
+    And(a=notsel0, b=sel[1], out=true-for-c);
+    And(a=true-for-c, b=in, out=c);
+    
+    And(a=sel[0], b=sel[1], out=true-for-d);
+    And(a=true-for-d, b=in, out=d);
 }
+
+/*
+in  sel[1]  sel[0]  a
+0   0       0       0
+1   0       0       1
+AND(NOT(sel[1]), NOT(sel[0])) = 1fora
+a = AND(1fora, in)
+
+in  sel[1]  sel[0]  b
+0   0       1       0
+1   0       1       1
+AND(sel[0], NOT(sel[1])) = 1forb
+b = AND(1forb, in)
+
+in  sel[1]  sel[0]  c
+0   1       0       0
+1   1       0       1
+AND(NOT(sel[0]), sel[1]) = 1forc
+c = AND(1forc, in)
+
+in  sel[1]  sel[0]  d
+0   1       1       0
+1   1       1       1
+AND(sel[0], sel[1]) = 1ford
+d = AND(1ford, in)
+*/
