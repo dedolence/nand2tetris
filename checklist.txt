@@ -9,7 +9,6 @@ Not16 = done
 And16 = done
 Or16 = done
 Mux16 = done
-DMux16
 Or8Way = done
 Mux4Way16 = done
 Mux8Way16 = done
